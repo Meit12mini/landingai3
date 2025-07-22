@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
+
+    <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI-Аудит",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "your@email.com",
+      "contactType": "customer support",
+      "availableLanguage": ["Russian"]
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -139,7 +156,7 @@
 
     <div class="form-group">
       <label for="phone">Телефон *</label>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" name="phone" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
     </div>
 
     <button type="submit" class="cta-btn">Отправить</button>
