@@ -637,11 +637,12 @@ textarea.error, select.error {
   justify-content: center; /* Центрирует колонки, если они не заполняют всю ширину */
   max-width: 400px; /* Ограничиваем ширину контейнера под 1 колонку */
   margin: 0 auto; /* Центрируем сам контейнер */
-   
+   align-items: baseline;
   }
+  
 input[type="text"], input[type="email"], input[type="tel"], textarea{
-  max-width: 366px;
-    width: auto !important;
+ 
+    width: clamp(205px, 60vw, 366px);
   }
 
   
