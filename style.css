@@ -610,7 +610,28 @@ dialog::backdrop {
 textarea.error, select.error {
   border-color: #FF5A5A;
 }
+
+@media screen and (max-width: 1200px) {
+  nav{
+    padding: 0 1.25rem;
+    width: auto;
+  }
+
+}
 @media screen and (max-width: 900px) {
+
+  .report-list li{
+    width: clamp(280px, 60vw, 630px);
+  }
+  .nav-list li{
+    display: none;
+  }
+  .nav-list li:last-child{
+    display: flex;
+  }
+  .ps{
+    display: none;
+  }
   .form-grid{
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   justify-content: center; /* Центрирует колонки, если они не заполняют всю ширину */

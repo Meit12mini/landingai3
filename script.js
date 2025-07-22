@@ -42,17 +42,17 @@ document.querySelector('a[href="#partner"]').addEventListener('click', function(
 
 
 
-document.querySelectorAll('.select-multiple').forEach(select => {
-    select.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        const option = e.target;
-        if (option.tagName === 'OPTION') {
-            option.selected = !option.selected;
-            const event = new Event('change', {bubbles: true});
-            select.dispatchEvent(event);
-        }
-     });
-});
+// document.querySelectorAll('.select-multiple').forEach(select => {
+//     select.addEventListener('mousedown', function (e) {
+//         e.preventDefault();
+//         const option = e.target;
+//         if (option.tagName === 'OPTION') {
+//             option.selected = !option.selected;
+//             const event = new Event('change', {bubbles: true});
+//             select.dispatchEvent(event);
+//         }
+//      });
+// });
 
 
 var element = document.getElementById('phone');
