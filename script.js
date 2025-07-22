@@ -83,3 +83,32 @@ var mask = new IMask(element, maskOptions);
       if (!isRoutineValid) routine.classList.add('error');
     }
   });
+
+document.getElementById("contactSubform").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const industry = document.getElementById("industry").value.trim();
+  const routine = document.getElementById("routine").value.trim();
+
+  const data = { name, email, phone, industry, routine };
+
+  try {
+    const res = await fetch("/api/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      alert("Спасибо! Мы свяжемся с вами в течение 24 часов.");
+      document.getElementById("contactSubform").reset();
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
+  } catch (err) {
+    alert("Ошибка соединения с сервером.");
+  }
+});
